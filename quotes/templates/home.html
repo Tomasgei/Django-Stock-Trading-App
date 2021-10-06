@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+<br/>
+
+{% if api %}
+    {% if api == "Some Error...." %}
+        There is some error wit request
+    {% else %}
+     <div class="row">
+        <div class="col">
+            <div class="card p-3" style="width: 18rem;">
+                <img src="//logo.clearbit.com/{{ api_2.website}}" class="card-img-top img-thumbnail" alt="Company logo" >
+
+                <div class="card-body">
+                    <h1 class="card-title">{{ api.symbol }}</h1>
+                    <p class="card-text">{{ api.companyName }}</p>
+                    Website: <a href = "https://{{ api_2.website}}">{{ api_2.website}}</a><br/>
+                    Closing price $: {{ api.close}}<br/>
+                    Change %: {{ api.changePercent}}<br/>
+                    YTD %: {{ api.ytdChang}}<br/>
+                    52 Wk High: {{ api.week52High}}<br/>
+                    52 Wk Low: {{ api.week52Low}}<br/><br/>
+
+                    <a href="#" class="btn btn-success">Buy Stock</a>
+                  </div>
+
+
+
+
+            </div>
+        </div>
+        <div class="col">
+            Tohle je druhá buňka
+            <a href="https://clearbit.com">Logos provided by Clearbit</a>
+        </div>
+    </div>    
+    {% endif %}        
+{% endif %}
+
+{% endblock %}
